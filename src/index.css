@@ -17,6 +17,13 @@ p {
   font-weight: 200;
   font-size: 14px;
 }
+h3 {
+  font-size: 32px;
+}
+.intro {
+  text-align: center;
+}
+
 .para {
   color: #fff;
 }
@@ -25,7 +32,7 @@ p {
   max-width: 600px;
   margin: 5vw auto;
   height: auto;
-  display: flex;
+  display: block;
   flex-direction: column;
   scrollbar-width: auto;
   scrollbar-color: #888 #f1f1f1;
@@ -74,7 +81,7 @@ p {
   box-sizing: border-box;
   font-size: 15px;
   outline: none;
-  width: 90%;
+  width: 80%;
   font-weight: 200;
 }
 
@@ -84,7 +91,7 @@ p {
 }
 
 .input-container button {
-  min-width: 10%;
+  min-width: 20%;
   border: none;
   border-left: 1px solid #cacaca;
   background-color: #fff;
@@ -129,29 +136,22 @@ p {
   background: #555;
 }
 
-span {
-  display: none;
-}
-
 .user {
   text-align: left;
   background-color: #1f1616;
   color: #ddd;
-  /* Additional styling for user messages */
+  margin-left: auto;
+  width: fit-content;
 }
 
 .model {
-  text-align: right;
   background-color: #d0e0f0;
-  /* Additional styling for model messages */
 }
 
-/* Container for the chat history */
-/* Container for the chat history */
 .chat-container {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Space between messages */
+  gap: 10px;
   padding: 20px;
   max-width: 600px;
   margin: auto;
@@ -159,6 +159,9 @@ span {
   background-color: #f5f5f5; /* Light background for contrast */
   border-radius: 10px; /* Rounded corners for the container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.chat-container > div:last-child {
+  margin-bottom: 220px;
 }
 
 /* Styling for user messages */
