@@ -2,6 +2,7 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { surpriseOption } from "../data/question";
 import Typewriter from "./components/Typewriter";
+import Header from "./components/header";
 
 function App() {
   const [error, setError] = useState("");
@@ -72,6 +73,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="app">
         {chatHistory.length > 0 ? (
           <div className="chat-container">

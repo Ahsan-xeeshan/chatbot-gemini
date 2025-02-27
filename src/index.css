@@ -7,10 +7,24 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #fafafc;
+  position: relative;
   color: #777;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fafafc;
+  z-index: 100;
+  width: 100%;
+}
+
+nav {
+  width: 80%;
+  margin: 5px auto;
 }
 
 p {
