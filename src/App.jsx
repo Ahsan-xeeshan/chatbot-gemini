@@ -1,15 +1,11 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { surpriseOption } from "../data/question";
 
 function App() {
   const [error, setError] = useState("");
   const [value, setValue] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
-
-  const surpriseOption = [
-    "Who won the latest Nobel Prize on literature?",
-    "Where does pizza come from?",
-    "Who do you make BLT sandwich?",
-  ];
 
   const suprise = () => {
     const randomValue =
@@ -40,11 +36,11 @@ function App() {
         ...oldChatHistory,
         {
           role: "user",
-          parts: [value], // Fixing incorrect format
+          parts: [value],
         },
         {
           role: "model",
-          parts: [data], // Fixing incorrect format
+          parts: [data],
         },
       ]);
       setValue("");
@@ -63,7 +59,23 @@ function App() {
   return (
     <>
       <div className="app">
-        <p>
+        <div className="chat-container">
+          {chatHistory.map((chatItem, _index) => (
+            <div key={_index}>
+              <p
+                className={`answer ${
+                  chatItem.role === "user" ? "user" : "model"
+                }`}
+              >
+                <span>{chatItem.role} :</span>{" "}
+                <ReactMarkdown>{chatItem.parts.join(" ")}</ReactMarkdown>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="question">
+        <p className="para">
           What do you want to know?
           <button
             className="surprise"
@@ -84,15 +96,6 @@ function App() {
           {error && <button onClick={clear}>Clear</button>}
         </div>
         {error && <p>{error}</p>}
-        <div className="search-result">
-          {chatHistory.map((chatItem, _index) => (
-            <div key={_index}>
-              <p className="answer">
-                {chatItem.role}: {chatItem.parts.join(" ")}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </>
   );
