@@ -1,0 +1,88 @@
+* {
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafc;
+  color: #777;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-weight: 200;
+  font-size: 14px;
+}
+.app {
+  width: 80vw;
+  margin: 10vw;
+  height: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.surprise {
+  background-color: #ececf1;
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
+  padding: 4px 12px;
+  margin: 0 0 2px 5px;
+  border: none;
+  border-radius: 5px;
+}
+.search-result {
+  margin-top: 10px;
+  overflow: scroll;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  border: solid 0.5px #cacaca;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 82, 0.15) 0 2px 4px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.input-container input {
+  border: none;
+  padding: 13px 14px;
+  box-sizing: border-box;
+  font-size: 15px;
+  outline: none;
+  width: 90%;
+  font-weight: 200;
+}
+
+.input-container input::placeholder {
+  color: #cacaca;
+  font-weight: 200;
+}
+
+.input-container button {
+  min-width: 10%;
+  border: none;
+  border-left: 1px solid #cacaca;
+  background-color: #fff;
+  color: #777;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-container button:active {
+  background-color: #cacaca;
+}
+
+.answer {
+  padding: 13px 14px;
+  border: solid 0.5px #cacaca;
+  background-color: #fff;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 200;
+  border-radius: 6px;
+}
